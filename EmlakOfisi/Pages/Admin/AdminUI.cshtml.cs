@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using EmlakOfisi.Bll.Abstract;
 using EmlakOfisi.Entities;
-using EmlakOfisi.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
