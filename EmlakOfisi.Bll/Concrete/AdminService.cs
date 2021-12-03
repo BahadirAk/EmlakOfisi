@@ -8,10 +8,10 @@ using System.Text;
 
 namespace EmlakOfisi.Bll.Concrete
 {
-	public class AdminManager : IAdminManager
+	public class AdminService : IAdminService
 	{
 		private IAdminDal _adminDal;
-		public AdminManager(IAdminDal adminDal)
+		public AdminService(IAdminDal adminDal)
 		{
 			_adminDal = adminDal;
 		}

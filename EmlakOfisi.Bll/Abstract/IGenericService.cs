@@ -1,12 +1,11 @@
 ﻿using EmlakOfisi.Dal.Abstract;
-using EmlakOfisi.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace EmlakOfisi.Bll.Abstract
 {
-	public interface IAdminManager : IBaseDal<AdminEntity>
+	public interface IGenericService<T> : IBaseDal<T>
 	{
 	}
 }

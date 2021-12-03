@@ -12,15 +12,20 @@ namespace EmlakOfisi.Pages.Admin
 {
 	public class AdminUIModel : PageModel
 	{
-		private IAgentManager _agentManager;
+		private IAgentService _agentService;
+		public AgentEntity Agent { get; set; }
 		public List<AgentEntity> Agents { get; set; }
-		public AdminUIModel(IAgentManager agentManager)
+		public AdminUIModel(IAgentService agentService)
 		{
-			_agentManager = agentManager;
+			_agentService = agentService;
 		}
 		public void OnGet()
 		{
-			Agents = _agentManager.GetAllByFilter(x => x.IsDeleted == false);
+			Agents = _agentService.GetAllByFilter(x => x.IsDeleted == false);
+		}
+		public void OnPost(AgentEntity agent)
+		{
+			//Agent = _agentService.Update(agent);
 		}
 	}
 }

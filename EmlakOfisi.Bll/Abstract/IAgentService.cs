@@ -6,7 +6,7 @@ using System.Text;
 
 namespace EmlakOfisi.Bll.Abstract
 {
-	public interface IAgentManager : IBaseDal<AgentEntity>
+	public interface IAgentService : IGenericService<AgentEntity>
 	{
 	}
 }

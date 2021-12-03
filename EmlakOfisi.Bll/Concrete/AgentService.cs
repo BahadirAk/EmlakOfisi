@@ -8,10 +8,10 @@ using System.Text;
 
 namespace EmlakOfisi.Bll.Concrete
 {
-	public class AgentManager : IAgentManager
+	public class AgentService : IAgentService
 	{
 		private IAgentDal _agentDal;
-		public AgentManager(IAgentDal agentDal)
+		public AgentService(IAgentDal agentDal)
 		{
 			_agentDal = agentDal;
 		}
