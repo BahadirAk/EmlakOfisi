@@ -1,0 +1,20 @@
+﻿@page
+@model EmlakOfisi.Pages.Admin.AddModel
+@{
+}
+
+<h2>Add</h2>
+
+@using (Html.BeginForm("OnPost", "Add", FormMethod.Post))
+{
+	<div class="form-group">
+		@Html.LabelFor(m => m.Agent.Name)
+		@Html.TextBoxFor(m => m.Agent.Name, new { @class = "form-control" })
+		@Html.LabelFor(m => m.Agent.Username)
+		@Html.TextBoxFor(m => m.Agent.Username, new { @class = "form-control" })
+		@Html.LabelFor(m => m.Agent.Password)
+		@Html.TextBoxFor(m => m.Agent.Password, new { @class = "form-control" })
+	</div>
+	@Html.HiddenFor(m => m.Agent.Id)
+	<button type="submit" class="btn btn-success">Add</button>
+}

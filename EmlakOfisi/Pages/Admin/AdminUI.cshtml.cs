@@ -23,9 +23,5 @@ namespace EmlakOfisi.Pages.Admin
 		{
 			Agents = _agentService.GetAllByFilter(x => x.IsDeleted == false);
 		}
-		public void OnPost(AgentEntity agent)
-		{
-			//Agent = _agentService.Update(agent);
-		}
 	}
 }
