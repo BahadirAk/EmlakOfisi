@@ -20,9 +20,7 @@ namespace EmlakOfisi.Pages.Admin
 		}
 		public void OnGet()
 		{
-			//AdminViewModel adminViewModel = new AdminViewModel();
 			Agents = _agentManager.GetAllByFilter(x => x.IsDeleted == false);
-			//AdminViewModel.Admin = admin;
 		}
 	}
 }
