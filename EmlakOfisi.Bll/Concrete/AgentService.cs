@@ -47,7 +47,18 @@ namespace EmlakOfisi.Bll.Concrete
 
 		public void Update(AgentEntity entity)
 		{
-			_agentDal.Update(entity);
+			var result = _agentDal.GetById(entity.Id);
+			if(result != null)
+			{
+				result.Name = entity.Name;
+				result.Username = entity.Username;
+				result.Password = entity.Password;
+				_agentDal.Update(result);
+			}
+			else
+			{
+				throw new NotImplementedException();
+			}
 		}
 	}
 }
