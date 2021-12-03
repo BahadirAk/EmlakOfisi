@@ -61,17 +61,19 @@
 				<table class="table table-bordered">
 					<thead>
 						<tr>
+							<th>#</th>
 							<th>Name</th>
 							<th>Username</th>
 							<th>Actions</th>
 						</tr>
 					</thead>
 					<tbody>
-						@foreach (var agents in Model.Agents)
+						@for (int i=0;i<Model.Agents.Count;i++)
 						{
 							<tr>
-								<td>@agents.Name</td>
-								<td>@agents.Username</td>
+								<td>@(i+1)</td>
+								<td>@Model.Agents[i].Name</td>
+								<td>@Model.Agents[i].Username</td>
 								<td>
 									<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
 									<a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
