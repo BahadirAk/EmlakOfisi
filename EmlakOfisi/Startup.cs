@@ -28,6 +28,10 @@ namespace EmlakOfisi
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddRazorPages();
+			services.AddMvc().AddRazorPagesOptions(options =>
+			{
+				options.Conventions.AddPageRoute("/Login/Login", "");
+			});
 			services.AddDbContext<EmlakOfisiContext>(options =>
 		options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 			services.AddScoped<IAdminDal,EfAdminDal>();
