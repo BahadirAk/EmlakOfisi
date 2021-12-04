@@ -1,0 +1,32 @@
+﻿@page
+@model EmlakOfisi.Pages.Login.LoginModel
+@{
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>Login</title>
+	<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+	<div class="container">
+		@using (Html.BeginForm("OnPost", "Login", FormMethod.Post))
+		{
+			<div class="form-group">
+				@Html.LabelFor(m => m.User.Username)
+				@Html.TextBoxFor(m => m.User.Username, new { @class = "form-control", placeholder = "Username" })
+				@Html.ValidationMessageFor(m => m.User.Username)
+			</div>
+			<div class="form-group">
+				@Html.LabelFor(m => m.User.Password)
+				@Html.TextBoxFor(m => m.User.Password, new { @class = "form-control", placeholder = "Password" })
+				@Html.ValidationMessageFor(m => m.User.Password)
+			</div>
+			<button type="submit" class="btn btn-block btn-success">Login</button>
+		}
+	</div>
+</body>
+</html>
