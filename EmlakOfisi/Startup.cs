@@ -32,8 +32,10 @@ namespace EmlakOfisi
 		options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 			services.AddScoped<IAdminDal,EfAdminDal>();
 			services.AddScoped<IAgentDal, EfAgentDal>();
+			services.AddScoped<IUserDal, EfUserDal>();
 			services.AddScoped<IAdminService, AdminService>();
 			services.AddScoped<IAgentService, AgentService>();
+			services.AddScoped<IUserService, UserService>();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -12,6 +12,7 @@ namespace EmlakOfisi.Dal.Concrete
 		{
 
 		}
+		public DbSet<UserEntity> Users { get; set; }
 		public DbSet<AdminEntity> Admins { get; set; }
 		public DbSet<AgentEntity> Agents { get; set; }
 	}
