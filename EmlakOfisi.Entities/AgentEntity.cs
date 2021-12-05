@@ -18,5 +18,7 @@ namespace EmlakOfisi.Entities
 		[Required]
 		public string Password { get; set; }
 		public bool IsDeleted { get; set; }
+
+		public virtual ICollection<AdEntity> Ads { get; set; }
 	}
 }

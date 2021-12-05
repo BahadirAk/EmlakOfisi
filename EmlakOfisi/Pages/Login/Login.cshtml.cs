@@ -30,8 +30,7 @@ namespace EmlakOfisi.Pages.Login
 					}
 					else
 					{
-						//return new RedirectToPageResult("/Agent/AgentUI");
-						return Page();
+						return new RedirectToPageResult("/Agent/AgentUI");
 					}
 				}
 				else

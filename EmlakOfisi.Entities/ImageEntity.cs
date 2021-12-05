@@ -6,15 +6,15 @@ using System.Text;
 
 namespace EmlakOfisi.Entities
 {
-	[Table("Admins")]
-	public class AdminEntity
+	[Table("Images")]
+	public class ImageEntity
 	{
 		[Key]
 		public int Id { get; set; }
 		[Required]
-		public string Username { get; set; }
-		[Required]
-		public string Password { get; set; }
+		public string Path { get; set; }
 
+		public int AdId { get; set; }
+		public virtual AdEntity AdEntity { get; set; }
 	}
 }
