@@ -21,6 +21,7 @@ namespace EmlakOfisi.Pages.Login
 		{
 			//ModelState.IsValid eklenecek
 			var result = _userService.Find(x => x.Username == user.Username);
+			MyClaimTypes.CurrentUser = _userService.GetById(result.Id);
 			if (result != null)
 			{
 				if(result.Username == user.Username && result.Password == user.Password)
