@@ -4,14 +4,16 @@ using EmlakOfisi.Dal.Concrete;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EmlakOfisi.Dal.Migrations
 {
     [DbContext(typeof(EmlakOfisiContext))]
-    partial class EmlakOfisiContextModelSnapshot : ModelSnapshot
+    [Migration("20211206133949_UpdatedModel")]
+    partial class UpdatedModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -50,9 +52,6 @@ namespace EmlakOfisi.Dal.Migrations
 
                     b.Property<string>("NumberOfRooms")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<double>("Price")
-                        .HasColumnType("float");
 
                     b.Property<string>("PropertyType")
                         .IsRequired()

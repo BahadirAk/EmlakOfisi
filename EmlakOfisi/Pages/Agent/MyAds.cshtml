@@ -1,14 +1,13 @@
-﻿@page
-@model EmlakOfisi.Pages.Agent.AgentUIModel
+﻿@page "{id:min(1)}"
+@model EmlakOfisi.Pages.Agent.MyAdsModel
 @{
 }
 
 <div>
-	<a class="btn btn-primary" href="/Agent/MyAds/@Model.Agent.Id">İlanlarım</a>
-	<a class="btn btn-primary" href="/Agent/ChangePassword/@Model.Agent.Id">Şifremi Değiştir</a>
-	<a class="btn btn-primary" href="/Login/Login">Çıkış Yap</a>
+	<a class="btn btn-primary" href="/Agent/Add">Yeni İlan Ekle</a>
+	<a class="btn btn-primary" href="/Agent/AgentUI">Geri</a>
 </div>
-<h2>İlanlar</h2>
+<h2>@Model.Agent.Name adlı emlakçıya ait ilanlar </h2>
 <table class="table table-bordered">
 	<thead>
 		<tr>
@@ -20,6 +19,7 @@
 			<th>Metrekaresi</th>
 			<th>Bölüm/Oda Sayısı</th>
 			<th>Fiyat</th>
+			<th></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -36,6 +36,12 @@
 				<td>@ads.M2 m²</td>
 				<td>@ads.NumberOfRooms</td>
 				<td>@ads.Price TL</td>
+				<td>
+					<div>
+						<a class="btn btn-primary" href="/Agent/Update/@ads.Id">Güncelle</a>
+						<a class="btn btn-primary" href="/Agent/Delete/@ads.Id">Sil</a>
+					</div>
+				</td>
 			</tr>
 		}
 	</tbody>

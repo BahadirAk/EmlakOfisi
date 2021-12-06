@@ -47,7 +47,7 @@ namespace EmlakOfisi.Bll.Concrete
 
 		public void Update(AdEntity entity)
 		{
-			throw new NotImplementedException();
+			_adDal.Update(entity);
 		}
 	}
 }

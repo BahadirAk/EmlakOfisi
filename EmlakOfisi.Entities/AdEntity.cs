@@ -21,9 +21,10 @@ namespace EmlakOfisi.Entities
 		public string Status { get; set; }
 		public string M2 { get; set; }
 		public string NumberOfRooms { get; set; }
+		public string ImagePath { get; set; }
+		public double Price { get; set; }
 		public bool IsDeleted { get; set; }
 
-		public virtual ICollection<ImageEntity> Images { get; set; }
 		public int AgentId { get; set; }
 		public virtual AgentEntity AgentEntity { get; set; }
 	}
