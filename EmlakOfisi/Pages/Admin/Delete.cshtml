@@ -1,0 +1,14 @@
+﻿@page "{id}"
+@model EmlakOfisi.Pages.Admin.DeleteModel
+@{
+}
+
+<h2>Silme İzni</h2>
+
+<div class="alert alert-danger">
+	<h5>@Model.Agent.Username kullanıcı adına sahip emlakçıyı silmek istediğinize emin misiniz?</h5>
+	<form method="post">
+		<button type="submit" class="btn btn-danger">Evet</button>
+		<a class="btn btn-primary" href="/Admin/AdminUI">Hayır</a>
+	</form>
+</div>

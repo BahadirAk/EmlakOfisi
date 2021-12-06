@@ -22,6 +22,7 @@ namespace EmlakOfisi.Pages.Admin
 		}
 		public IActionResult OnPost(AgentEntity agent)
 		{
+			//ModelState.IsValid eklenecek
 			AgentEntity entity = new AgentEntity();
 			entity.Name = agent.Name;
 			entity.Username = agent.Username;

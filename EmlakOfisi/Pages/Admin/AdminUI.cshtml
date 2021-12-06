@@ -4,15 +4,18 @@
 	ViewData["Title"] = "Admin Sayfası";
 }
 
-<a class="btn btn-primary" href="/Admin/Add">Add Agent</a>
-<h2>Agents</h2>
+<div>
+	<a class="btn btn-primary" href="/Admin/Add">Yeni Emlakçı Ekle</a>
+	<a class="btn btn-primary" href="/Login/Login">Çıkış Yap</a>
+</div>
+<h2>Emlakçılar</h2>
 <table class="table table-bordered">
 	<thead>
 		<tr>
 			<th>#</th>
-			<th>Name</th>
-			<th>Username</th>
-			<th>Password</th>
+			<th>Firma İsmi</th>
+			<th>Kullanıcı Adı</th>
+			<th>Şifre</th>
 			<th></th>
 		</tr>
 	</thead>
@@ -24,7 +27,10 @@
 				<td>@Model.Agents[i].Name</td>
 				<td>@Model.Agents[i].Username</td>
 				<td>@Model.Agents[i].Password</td>
-				<a
+				<td>
+					<a class="btn btn-primary" href="/Admin/Update/@Model.Agents[i].Id">Güncelle</a>
+					<a class="btn btn-primary" href="/Admin/Delete/@Model.Agents[i].Id">Sil</a>
+				</td>
 			</tr>
 		}
 	</tbody>

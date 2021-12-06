@@ -1,11 +1,11 @@
-﻿@page
-@model EmlakOfisi.Pages.Admin.AddModel
+﻿@page "{id:min(1)}"
+@model EmlakOfisi.Pages.Admin.UpdateModel
 @{
 }
 
-<h2>Yeni Kayıt</h2>
+<h2>@Model.Agent.Username kullanıcı adına sahip emlakçıyı düzenliyorsunuz</h2>
 
-@using (Html.BeginForm("OnPost", "Add", FormMethod.Post))
+@using (Html.BeginForm("OnPost", "Admin", FormMethod.Post))
 {
 	<div class="form-group">
 		@Html.LabelFor(m => m.Agent.Name, "Firma İsmi")
@@ -17,7 +17,7 @@
 	</div>
 	@Html.HiddenFor(m => m.Agent.Id)
 	<div>
-		<button type="submit" class="btn btn-success">Ekle</button>
+		<button type="submit" class="btn btn-success">Güncelle</button>
 		<a class="btn btn-primary" href="/Admin/AdminUI">Geri</a>
 	</div>
 }

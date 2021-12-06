@@ -19,6 +19,7 @@ namespace EmlakOfisi.Pages.Login
 		}
 		public IActionResult OnPost(UserEntity user)
 		{
+			//ModelState.IsValid eklenecek
 			var result = _userService.Find(x => x.Username == user.Username);
 			if (result != null)
 			{
