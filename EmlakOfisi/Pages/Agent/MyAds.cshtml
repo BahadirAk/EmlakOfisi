@@ -8,6 +8,23 @@
 	<a class="btn btn-primary" href="/Agent/AgentUI">Geri</a>
 </div>
 <h2>@Model.Agent.Name adlı emlakçıya ait ilanlar </h2>
+
+<form method="get">
+	<input type="text" name="searchText" />
+	<button type="submit" class="btn btn-primary">Search</button>
+	<select name="propertyType" onchange="this.form.submit();">
+		<option selected disabled>--Emlak Türü Seçiniz--</option>
+		<option value="Konut">Konut</option>
+		<option value="İş Yeri">İş Yeri</option>
+		<option value="Arsa">Arsa</option>
+	</select>
+	<select name="status" onchange="this.form.submit();">
+		<option selected disabled>--İlan Durumu Seçiniz--</option>
+		<option value="Kiralık">Kiralık</option>
+		<option value="Satılık">Satılık</option>
+	</select>
+</form>
+
 <table class="table table-bordered">
 	<thead>
 		<tr>

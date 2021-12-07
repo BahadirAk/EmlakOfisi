@@ -21,10 +21,25 @@ namespace EmlakOfisi.Pages.Agent
             _agentService = agentService;
             _adService = adService;
 		}
-		public void OnGet(int id)
+		public void OnGet(int id, string searchText, string propertyType, string status)
         {
             Agent = _agentService.GetById(id);
-            Ads = _adService.GetAllByFilter(x => x.AgentEntity == Agent);
+            if (searchText != null)
+            {
+                Ads = _adService.GetAllByFilter(x => x.IsDeleted == false).Where(x => x.Name.ToLower().Contains(searchText)).ToList();
+            }
+            else if(propertyType != null)
+			{
+                Ads = _adService.GetAllByFilter(x => x.IsDeleted == false && x.AgentEntity == Agent).Where(x => x.PropertyType == propertyType).ToList();
+            }
+            else if(status != null)
+			{
+                Ads = _adService.GetAllByFilter(x => x.IsDeleted == false && x.AgentEntity == Agent).Where(x => x.Status == status).ToList();
+            }
+            else
+            {
+                Ads = _adService.GetAllByFilter(x => x.AgentEntity == Agent);
+            }
         }
     }
 }
