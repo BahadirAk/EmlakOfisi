@@ -6,27 +6,44 @@
 
 <h2>Yeni İlan</h2>
 
-@using (Html.BeginForm("OnPost", "Add", FormMethod.Post))
-{
-	<div class="form-group">
-		@Html.LabelFor(m => m.Ad.ImagePath, "İlan Resmi")
-		@Html.TextBoxFor(m => m.Ad.ImagePath, new { @class = "form-control", placeholder = "Lütfen eklemek istediğiniz resmin URL sini giriniz." })
-		@Html.LabelFor(m => m.Ad.Name, "İlan Adı")
-		@Html.TextBoxFor(m => m.Ad.Name, new { @class = "form-control" })
-		@Html.LabelFor(m => m.Ad.PropertyType, "Emlak Türü")
-		@Html.TextBoxFor(m => m.Ad.PropertyType, new { @class = "form-control" })
-		@Html.LabelFor(m => m.Ad.Status, "İlan Durumu")
-		@Html.TextBoxFor(m => m.Ad.Status, new { @class = "form-control" })
-		@Html.LabelFor(m => m.Ad.M2, "Metrekaresi")
-		@Html.TextBoxFor(m => m.Ad.M2, new { @class = "form-control" })
-		@Html.LabelFor(m => m.Ad.NumberOfRooms, "Bölüm/Oda Sayısı")
-		@Html.TextBoxFor(m => m.Ad.NumberOfRooms, new { @class = "form-control" })
-		@Html.LabelFor(m => m.Ad.Price, "Fiyatı")
-		@Html.TextBoxFor(m => m.Ad.Price, new { @class = "form-control" })
-	</div>
-	@Html.HiddenFor(m => m.Ad.Id)
-	<div>
-		<button type="submit" class="btn btn-success">Ekle</button>
-		<a class="btn btn-primary" href="/Agent/MyAds/@Model.Agent.Id">Geri</a>
-	</div>
-}
+<div>
+	@using (Html.BeginForm("OnPost", "Add", FormMethod.Post))
+	{
+		<div class="form-group">
+			@Html.LabelFor(m => m.Ad.ImagePath, "İlan Resmi")
+			@Html.TextBoxFor(m => m.Ad.ImagePath, new { @class = "form-control", placeholder = "Lütfen eklemek istediğiniz resmin URL sini giriniz." })
+		</div>
+		<div class="form-group">
+			@Html.LabelFor(m => m.Ad.Name, "İlan Adı")
+			@Html.TextBoxFor(m => m.Ad.Name, new { @class = "form-control" })
+			@Html.ValidationMessageFor(m => m.Ad.Name)
+		</div>
+		<div class="form-group">
+			@Html.LabelFor(m => m.Ad.PropertyType, "Emlak Türü")
+			@Html.TextBoxFor(m => m.Ad.PropertyType, new { @class = "form-control" })
+			@Html.ValidationMessageFor(m => m.Ad.PropertyType)
+		</div>
+		<div class="form-group">
+			@Html.LabelFor(m => m.Ad.Status, "İlan Durumu")
+			@Html.TextBoxFor(m => m.Ad.Status, new { @class = "form-control" })
+			@Html.ValidationMessageFor(m => m.Ad.Status)
+		</div>
+		<div class="form-group">
+			@Html.LabelFor(m => m.Ad.M2, "Metrekaresi")
+			@Html.TextBoxFor(m => m.Ad.M2, new { @class = "form-control" })
+		</div>
+		<div class="form-group">
+			@Html.LabelFor(m => m.Ad.NumberOfRooms, "Bölüm/Oda Sayısı")
+			@Html.TextBoxFor(m => m.Ad.NumberOfRooms, new { @class = "form-control" })
+		</div>
+		<div class="form-group">
+			@Html.LabelFor(m => m.Ad.Price, "Fiyatı")
+			@Html.TextBoxFor(m => m.Ad.Price, new { @class = "form-control" })
+		</div>
+		@Html.HiddenFor(m => m.Ad.Id)
+		<div>
+			<button type="submit" class="btn btn-success">Ekle</button>
+			<a class="btn btn-primary" href="/Agent/MyAds/@Model.Agent.Id">Geri</a>
+		</div>
+	}
+</div>

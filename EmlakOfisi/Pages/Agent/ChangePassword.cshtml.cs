@@ -36,10 +36,13 @@ namespace EmlakOfisi.Pages.Agent
 						_agentService.Update(result);
 						return new RedirectToPageResult("/Agent/AgentUI");
 					}
+					ViewData["Message"] = "Yeni þifrenizi yanlýþ girdiniz!!!";
 					return Page();
 				}
+				ViewData["Message"] = "Eski þifrenizi ile yeni þifreniz ayný olamaz!!!";
 				return Page();
 			}
+			ViewData["Message"] = "Eski þifrenizi yanlýþ girdiniz!!!";
 			return Page();
 		}
 	}
