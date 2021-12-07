@@ -6,6 +6,8 @@
 
 <h2>Yeni İlan</h2>
 
+<h3 style="color:red">@ViewData["Message"]</h3>
+
 <div>
 	@using (Html.BeginForm("OnPost", "Add", FormMethod.Post))
 	{
@@ -20,12 +22,21 @@
 		</div>
 		<div class="form-group">
 			@Html.LabelFor(m => m.Ad.PropertyType, "Emlak Türü")
-			@Html.TextBoxFor(m => m.Ad.PropertyType, new { @class = "form-control" })
+			<select name="propertyType" onchange="this.div.submit();">
+				<option selected disabled>--Emlak Türü Seçiniz--</option>
+				<option value="Konut">Konut</option>
+				<option value="İş Yeri">İş Yeri</option>
+				<option value="Arsa">Arsa</option>
+			</select>
 			@Html.ValidationMessageFor(m => m.Ad.PropertyType)
 		</div>
 		<div class="form-group">
 			@Html.LabelFor(m => m.Ad.Status, "İlan Durumu")
-			@Html.TextBoxFor(m => m.Ad.Status, new { @class = "form-control" })
+			<select name="status" onchange="this.div.submit();">
+				<option selected disabled>--İlan Durumu Seçiniz--</option>
+				<option value="Kiralık">Kiralık</option>
+				<option value="Satılık">Satılık</option>
+			</select>
 			@Html.ValidationMessageFor(m => m.Ad.Status)
 		</div>
 		<div class="form-group">
