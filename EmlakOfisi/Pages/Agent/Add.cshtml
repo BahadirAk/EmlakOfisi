@@ -1,4 +1,5 @@
-﻿@page 
+﻿@page
+
 @model EmlakOfisi.Pages.Agent.AddModel
 @{
 }
@@ -24,6 +25,8 @@
 		@Html.TextBoxFor(m => m.Ad.Price, new { @class = "form-control" })
 	</div>
 	@Html.HiddenFor(m => m.Ad.Id)
-	<button type="submit" class="btn btn-success">Ekle</button>
+	<div>
+		<button type="submit" class="btn btn-success">Ekle</button>
+		<a class="btn btn-primary" href="/Agent/MyAds/@Model.Agent.Id">Geri</a>
+	</div>
 }
-<a class="btn btn-primary" href="/Agent/MyAds/@Model.Agent.Id">Geri</a>

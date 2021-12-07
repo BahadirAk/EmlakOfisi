@@ -18,7 +18,7 @@
 			<th>İlan Durumu</th>
 			<th>Metrekaresi</th>
 			<th>Bölüm/Oda Sayısı</th>
-			<th>Fiyat</th>
+			<th width="150">Fiyat</th>
 			<th></th>
 		</tr>
 	</thead>
@@ -35,7 +35,7 @@
 				<td>@ads.Status</td>
 				<td>@ads.M2 m²</td>
 				<td>@ads.NumberOfRooms</td>
-				<td>@ads.Price TL</td>
+				<td>@String.Format("{0:#,##0.00}", ads.Price) TL</td>
 				<td>
 					<div>
 						<a class="btn btn-primary" href="/Agent/Update/@ads.Id">Güncelle</a>
