@@ -22,7 +22,6 @@
 		<div class="form-group">
 			@Html.LabelFor(m => m.Agent.Password, "Şifre")
 			@Html.TextBoxFor(m => m.Agent.Password, new { @class = "form-control" })
-			@Html.ValidationMessageFor(m => m.Agent.Password)
 		</div>
 		@Html.HiddenFor(m => m.Agent.Id)
 		<div>

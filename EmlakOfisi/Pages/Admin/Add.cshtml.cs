@@ -24,15 +24,15 @@ namespace EmlakOfisi.Pages.Admin
 		{
 			if (ModelState.IsValid)
 			{
-				AgentEntity entity = new AgentEntity();
-				entity.Name = agent.Name;
-				entity.Username = agent.Username;
-				entity.Password = agent.Password == null ? "123456" : agent.Password;
-				entity.IsDeleted = false;
-				_agentService.Add(entity);
-				return new RedirectToPageResult("/Admin/AdminUI");
+				return Page();
 			}
-			return Page();
+			AgentEntity entity = new AgentEntity();
+			entity.Name = agent.Name;
+			entity.Username = agent.Username;
+			entity.Password = agent.Password == null ? "123456" : agent.Password;
+			entity.IsDeleted = false;
+			_agentService.Add(entity);
+			return new RedirectToPageResult("/Admin/AdminUI");
 		}
 	}
 }
