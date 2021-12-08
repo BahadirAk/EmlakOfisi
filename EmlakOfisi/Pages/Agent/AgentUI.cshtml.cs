@@ -25,21 +25,15 @@ namespace EmlakOfisi.Pages.Agent
 		{
 			var user = MyClaimTypes.CurrentUser;
 			Agent = _agentService.Find(x => x.Username == user.Username);
+			var propertyTypeLast = propertyType == null ? "" : propertyType;
+			var statusLast = status == null ? "" : status;
 			if (searchText != null)
 			{
-				Ads = _adService.GetAllByFilter(x => x.IsDeleted == false).Where(x => x.Name.ToLower().Contains(searchText)).ToList();
-			}
-			else if(propertyType != null)
-			{
-				Ads = _adService.GetAllByFilter(x => x.IsDeleted == false).Where(x => x.PropertyType == propertyType).ToList();
-			}
-			else if(status != null)
-			{
-				Ads = _adService.GetAllByFilter(x => x.IsDeleted == false).Where(x => x.Status == status).ToList();
+				Ads = _adService.GetAllByFilter(x => x.IsDeleted == false).Where(x => x.Name.ToLower().Contains(searchText) && x.PropertyType.Contains(propertyTypeLast) && x.Status.Contains(statusLast)).ToList();
 			}
 			else
 			{
-				Ads = _adService.GetAllByFilter(x => x.IsDeleted == false);
+				Ads = _adService.GetAllByFilter(x => x.IsDeleted == false).Where(x => x.PropertyType.Contains(propertyTypeLast) && x.Status.Contains(statusLast)).ToList();
 			}
 		}
 	}
